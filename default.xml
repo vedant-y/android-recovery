@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote  name="github"
+           fetch="https://github.com"
+           review="review.cyanogenmod.org"
+           revision="refs/heads/cm-13.0" />
+
+  <remote  name="aosp"
+           fetch="https://android.googlesource.com"
+           review="android-review.googlesource.com"
+           revision="refs/tags/android-6.0.1_r74" />
+
+  <default remote="github"
+           sync-c="true"
+           sync-j="4" />
+
+<!-- CYANOGENMOD -->
+  <project path="build" name="CyanogenMod/android_build" groups="pdk" >
+    <copyfile src="core/root.mk" dest="Makefile" />
+  </project>
+  <project path="bionic" name="CyanogenMod/android_bionic" groups="pdk" />
+  <project path="bootable/recovery" name="CyanogenMod/android_bootable_recovery" groups="pdk" />
+  <project path="external/boringssl" name="CyanogenMod/android_external_boringssl" groups="pdk" />
+  <project path="external/bouncycastle" name="CyanogenMod/android_external_bouncycastle" groups="pdk" />
+  <project path="external/e2fsprogs" name="CyanogenMod/android_external_e2fsprogs" groups="pdk" />
+  <project path="external/exfat" name="CyanogenMod/android_external_exfat" />
+  <project path="external/f2fs-tools" name="CyanogenMod/android_external_f2fs-tools" groups="pdk" />
+  <project path="external/fsck_msdos" name="CyanogenMod/android_external_fsck_msdos" groups="pdk-cw-fs,pdk-fs" />
+  <project path="external/fuse" name="CyanogenMod/android_external_fuse" />
+  <project path="external/gptfdisk" name="CyanogenMod/android_external_gptfdisk" groups="pdk-fs" />
+  <project path="external/libselinux" name="CyanogenMod/android_external_libselinux" groups="pdk" />
+  <project path="external/libtar" name="CyanogenMod/android_external_libtar" />
+  <project path="external/lzma" name="CyanogenMod/android_external_lzma" groups="pdk" />
+  <project path="external/mksh" name="CyanogenMod/android_external_mksh" groups="pdk" />
+  <project path="external/ntfs-3g" name="CyanogenMod/android_external_ntfs-3g" />
+  <project path="external/pcre" name="CyanogenMod/android_external_pcre" groups="pdk" />
+  <project path="external/pigz" name="CyanogenMod/android_external_pigz" />
+  <project path="external/sepolicy" name="CyanogenMod/android_external_sepolicy" groups="pdk" />
+  <project path="external/toybox" name="CyanogenMod/android_external_toybox" groups="pdk" />
+  <project path="external/zlib" name="CyanogenMod/android_external_zlib" groups="pdk" />
+  <project path="frameworks/native" name="CyanogenMod/android_frameworks_native" groups="pdk" />
+  <project path="hardware/libhardware" name="CyanogenMod/android_hardware_libhardware" groups="pdk" />
+  <project path="hardware/libhardware_legacy" name="CyanogenMod/android_hardware_libhardware_legacy" groups="pdk" />
+  <project path="libnativehelper" name="CyanogenMod/android_libnativehelper" groups="pdk" />
+  <project path="system/core" name="CyanogenMod/android_system_core" groups="pdk" />
+  <project path="system/extras" name="CyanogenMod/android_system_extras" groups="pdk" />
+  <project path="system/security" name="CyanogenMod/android_system_security" groups="pdk" />
+  <project path="system/vold" name="CyanogenMod/android_system_vold" groups="pdk" />
+  <project path="vendor/cm" name="CyanogenMod/android_vendor_cm" />
+<!-- CYANOGENMOD -->
+
+<!-- AOSP -->
+  <project path="external/bison" name="platform/external/bison" groups="pdk" remote="aosp" />
+  <project path="external/compiler-rt" name="platform/external/compiler-rt" groups="pdk" remote="aosp" />
+  <project path="external/jemalloc" name="platform/external/jemalloc" groups="pdk" remote="aosp" />
+  <project path="external/libcxx" name="platform/external/libcxx" groups="pdk" remote="aosp" />
+  <project path="external/libcxxabi" name="platform/external/libcxxabi" groups="pdk" remote="aosp" />
+  <project path="external/libdrm" name="platform/external/libdrm" groups="pdk" remote="aosp" />
+  <project path="external/libnl" name="platform/external/libnl" groups="pdk" remote="aosp" />
+  <project path="external/libpng" name="platform/external/libpng" groups="pdk" remote="aosp" />
+  <project path="external/libunwind" name="platform/external/libunwind" groups="pdk" remote="aosp" />
+  <project path="external/llvm" name="platform/external/llvm" groups="pdk" remote="aosp" />
+  <project path="external/safe-iop" name="platform/external/safe-iop" groups="pdk" remote="aosp" />
+  <project path="external/scrypt" name="platform/external/scrypt" groups="pdk" remote="aosp" />
+  <project path="external/selinux" name="platform/external/selinux" groups="pdk" remote="aosp" />
+  <project path="external/squashfs-tools" name="platform/external/squashfs-tools" groups="pdk" remote="aosp" />
+  <project path="prebuilts/clang/linux-x86/host/3.6" name="platform/prebuilts/clang/linux-x86/host/3.6" groups="pdk,linux" clone-depth="1" remote="aosp" />
+  <project path="prebuilts/gcc/linux-x86/arm/arm-eabi-4.8" name="platform/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8" groups="pdk,linux,arm" clone-depth="1" remote="aosp" />
+  <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" name="platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" groups="pdk,linux,arm" clone-depth="1" remote="aosp" />
+  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.15-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.15-4.8"  groups="pdk,linux" clone-depth="1" remote="aosp" />
+  <project path="prebuilts/misc" name="platform/prebuilts/misc" groups="pdk" clone-depth="1" remote="aosp" />
+  <project path="prebuilts/ndk" name="platform/prebuilts/ndk" groups="pdk" clone-depth="1" remote="aosp" />
+  <project path="prebuilts/sdk" name="platform/prebuilts/sdk" groups="pdk" clone-depth="1" remote="aosp" />
+<!-- AOSP -->
+
+<!-- SURNIA -->
+  <project path="device/motorola/surnia" name="CyanogenMod/android_device_motorola_surnia" />
+  <project path="device/motorola/msm8916-common" name="CyanogenMod/android_device_motorola_msm8916-common" />
+  <project path="device/qcom/common" name="CyanogenMod/android_device_qcom_common" />
+  <project path="device/qcom/sepolicy" name="CyanogenMod/android_device_qcom_sepolicy" />
+  <project path="kernel/motorola/msm8916" name="CyanogenMod/android_kernel_motorola_msm8916" />
+<!-- SURNIA -->
+
+</manifest>
